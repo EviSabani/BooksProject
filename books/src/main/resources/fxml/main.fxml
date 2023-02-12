@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="booksTab" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.books.BooksSceneController">
+  <children>
+    <SplitPane dividerPositions="0.2506, 0.5" focusTraversable="true" prefWidth="1500.0" VBox.vgrow="ALWAYS">
+      <items>
+          <AnchorPane>
+               <children>
+                  <SplitPane dividerPositions="0.7" orientation="VERTICAL" prefHeight="876.0" prefWidth="372.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" minHeight="-Infinity" spacing="5.0">
+                                 <children>
+                              <Label alignment="CENTER" minWidth="60.0" style="&#10;" text="Search for books" textAlignment="CENTER" textFill="#878787" wrapText="false">
+                                <font>
+                                  <Font name="System Bold" size="24.0" fx:id="x1" />
+                                </font>
+                                       <padding>
+                                          <Insets bottom="20.0" />
+                                       </padding>
+                              </Label>
+                                    <HBox alignment="CENTER" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Title" />
+                                          <TextField fx:id="titleLabel" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="40.0" layoutY="202.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Category" />
+                                          <TextField fx:id="categoryLabel" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="40.0" layoutY="237.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Writer" />
+                                          <TextField fx:id="writerLabel" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="115.0" layoutY="152.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Publisher" />
+                                          <TextField fx:id="publisherLabel" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="110.0" layoutY="182.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="ISBN" />
+                                          <TextField fx:id="isbnLabel" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="106.0" layoutY="242.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="LCCN" />
+                                          <TextField fx:id="lccnLabel" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="106.0" layoutY="242.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="OCLC" />
+                                          <TextField fx:id="oclcLabel">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="40.0" layoutY="309.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Viewability" />
+                                          <ChoiceBox fx:id="viewabilityChoiceBox" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="40.0" layoutY="324.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Print Type" />
+                                          <ChoiceBox fx:id="printTypeChoiceBox" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="40.0" layoutY="355.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Projection" />
+                                          <ChoiceBox fx:id="projectionChoiceBox" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="40.0" layoutY="386.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Sorting" />
+                                          <ChoiceBox fx:id="sortingChoiceBox" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="40.0" layoutY="355.0" spacing="20.0">
+                                       <children>
+                                          <Pane prefWidth="100.0" />
+                                          <CheckBox fx:id="epubCheckBox" alignment="TOP_LEFT" cache="true" contentDisplay="TOP" indeterminate="true" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" text="has downloadable file" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#searchButtonController" text="Search">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane>
+                           <children>
+                              <VBox alignment="TOP_CENTER" onMousePressed="#getUserAndBookshelfIDs" prefHeight="259.0" prefWidth="370.0" spacing="5.0">
+                                 <children>
+                                    <Label alignment="CENTER" minWidth="60.0" style="&#10;" text="Search via Bookshelf" textAlignment="CENTER" textFill="#878787" wrapText="false">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" fx:id="x11" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="20.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox alignment="CENTER" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="UserID" />
+                                          <TextField fx:id="userIdLabel" editable="false" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="65.0" spacing="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="BookshelfID" />
+                                          <TextField fx:id="bookshelfIdLabel" editable="false" />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#searchBooksViaBookshelf" text="Search">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+      <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefWidth="1066.0">
+        <children>
+                <VBox alignment="CENTER" fillWidth="false" spacing="20.0">
+                  <children>
+                    <Label alignment="CENTER" style="&#10;" text="View Books" textAlignment="CENTER" textFill="#878787" wrapText="false">
+                           <font>
+                              <Font name="System Bold" size="24.0" fx:id="x5" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextArea fx:id="moreInfoBox" editable="false">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TextArea>
+                        <TableView fx:id="booksTableView" onMouseClicked="#findMoreInfo" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="colAuthors" minWidth="50.0" prefWidth="100.0" text="Authors" />
+                            <TableColumn fx:id="colPublisher" minWidth="-1.0" prefWidth="100.0" text="Publisher" />
+                              <TableColumn fx:id="colTitle" minWidth="150.0" prefWidth="429.0" text="Title" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <VBox alignment="CENTER_RIGHT" spacing="20.0">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <children>
+                                    <Label text="Max Results" />
+                                    <ChoiceBox fx:id="maxResultsChoiceBox" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Button fx:id="leftPageButton" mnemonicParsing="false" onAction="#leftPageButtonController" text="&lt;--" />
+                                    <Pane prefWidth="200.0" />
+                                    <Button fx:id="rightPageButton" mnemonicParsing="false" onAction="#rightPageButtonController" text="--&gt;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                  </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                </VBox>
+        </children>
+      </AnchorPane>
+            <VBox alignment="TOP_CENTER" spacing="30.0">
+               <children>
+                  <Pane prefHeight="170.0" prefWidth="403.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Label alignment="CENTER" style="&#10;" text="History" textAlignment="CENTER" textFill="#878787" wrapText="false">
+                     <font>
+                        <Font name="System Bold" size="24.0" fx:id="x51" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TableView fx:id="booksHistoryTableView">
+                    <columns>
+                      <TableColumn fx:id="titleHistoryCol" prefWidth="60.0" text="title" />
+                        <TableColumn fx:id="categoryHistoryCol" prefWidth="60.0" text="category" />
+                        <TableColumn fx:id="writerHistoryCol" prefWidth="60.0" text="writer" />
+                        <TableColumn fx:id="publisherHistoryCol" prefWidth="60.0" text="publisher" />
+                        <TableColumn fx:id="isbnHistoryCol" prefWidth="60.0" text="isbn" />
+                        <TableColumn fx:id="lccnHistoryCol" prefWidth="60.0" text="lccn" />
+                        <TableColumn fx:id="oclcHistoryCol" prefWidth="60.0" text="oclc" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="transferSearchedItemButton" disable="true" mnemonicParsing="false" onAction="#setSearchedItem" text="Transfer Searched Item" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="errorLabel" maxHeight="1.7976931348623157E308" maxWidth="-1.0" textFill="#a82e2e" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label fx:id="statusLabel" font="$x3" maxWidth="-1.0" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Label>
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

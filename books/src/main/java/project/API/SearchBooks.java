@@ -35,7 +35,7 @@ public class SearchBooks {
 			return false;
 		}
 		if (maxResults < 10 || maxResults > 40) {
-			setMessage("Max results have to be beetween 10 and 40");
+			setMessage("Max results have to be between 10 and 40");
 			return false;
 		}
         try {

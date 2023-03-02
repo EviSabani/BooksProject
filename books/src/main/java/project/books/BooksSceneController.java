@@ -233,7 +233,7 @@ public class BooksSceneController extends MainController{
 		try {
 			getData();
 		} catch (Exception e) {
-			e.printStackTrace();
+			errorLabel.setText("Something went wrong. Please try again later!");
 		}
 		
 		if(page <= 0) leftPageButton.setDisable(true);
